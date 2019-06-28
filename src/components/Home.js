@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './home.css';
 
 
 class Home extends Component {
@@ -8,6 +9,8 @@ class Home extends Component {
         return (
 
             <React.Fragment>
+                  <div className="bg">
+
                      <nav className="navbar navbar-dark bg-primary">
         <a className="navbar-brand" href="#">Road Names</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +22,7 @@ class Home extends Component {
               <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
+              <a className="nav-link" href="/map">Link</a>
             </li>
             <li className="nav-item">
               <a className="nav-link disabled" href="#">Disabled</a>
@@ -37,9 +40,10 @@ class Home extends Component {
         </div>
       </nav>
       <div style={{margin:"70px"}}>
-      <button className="btn btn-lg btn-secondary btn-block" type="submit" style={{marginTop: "400px",backgroundColor:"#17a2b8"}}>Roads Near Me</button>
+      <a href="/map" ><button className="btn btn-lg btn-secondary btn-block" type="submit" style={{marginTop: "400px",backgroundColor:"#17a2b8"}}>Roads Near Me</button></a>
       <button className="btn btn-lg btn-secondary btn-block" type="submit" style={{marginTop: "10px",backgroundColor:"#17a2b8"}}>All Roads</button>
       <button className="btn btn-lg btn-primary btn-block" type="submit">Help</button>
+      </div>
       </div>
             </React.Fragment>
 
