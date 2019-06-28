@@ -1,53 +1,29 @@
 import React from 'react';
-import './App.css';
-import GoogleMapReact from 'google-map-react';
-import Data from './Data'
 
-var myLatLng = {lat: 6.915924, lng: 79.864894};
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+
+import Home from './components/Home'
+import MapG from './components/Map'
+
+
 
 class  App  extends React.Component{
-  static defaultProps = {
-    center: {
-      lat: 6.927079
-      ,
-      lng: 79.861244
-    },
-    zoom: 13
-  };
+ 
   
-  renderMarkers(map, maps) {
-    Data.map(data=>{
-      var infowindow = new maps.InfoWindow({
-        content: '<div><strong>' + data.roadname + '</strong><br>' +
-         
-        data.description + '</div>'
-      });
-      let marker = new maps.Marker({
-        position: data.position,
-        animation: maps.Animation.DROP,
-        map:map,
-        title: data.roadname
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-    })
-  }
 
   render(){
     return (
-      <div style={{ height: '100vh', width: '100%' }}>
-  
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyBrNnazhg3iQlhgWfw9gT6FtTKy9pwJpVY" }}
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
+      <BrowserRouter>
+      <div className="App">
       
-        onGoogleApiLoaded={({map, maps}) => this.renderMarkers(map, maps)}
+      <Switch>
+      
+      <Route exact path='/' component = {Home} />
+      <Route exact path='/map' component = {MapG} />
 
-      >
-        </GoogleMapReact> 
-    </div>
+      </Switch>
+      </div>
+      </BrowserRouter>
     )
     }
 }
