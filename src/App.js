@@ -1,11 +1,9 @@
 import React from 'react';
-
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-
 import Home from './components/Home'
 import MapG from './components/Map'
 import Roads from './components/Roads';
-
+require('./Data')
 
 
 class  App  extends React.Component{

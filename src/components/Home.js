@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './home.css';
-
+import {Link} from 'react-router-dom'
+require ('../config/database')
 
 class Home extends Component {
     render() {
@@ -19,7 +20,7 @@ class Home extends Component {
         <div className="collapse navbar-collapse" id="navbarsExample01">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+              <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/map">Link</a>
@@ -40,8 +41,8 @@ class Home extends Component {
         </div>
       </nav>
       <div style={{margin:"70px"}}>
-      <a href="/map" ><button className="btn btn-lg btn-secondary btn-block" type="submit" style={{marginTop: "400px",backgroundColor:"#17a2b8"}}>Roads Near Me</button></a>
-      <button className="btn btn-lg btn-secondary btn-block" type="submit" style={{marginTop: "10px",backgroundColor:"#17a2b8"}}>All Roads</button>
+      <Link to="/map" ><button className="btn btn-lg btn-secondary btn-block" type="submit" style={{marginTop: "400px",backgroundColor:"#17a2b8"}}>Roads Near Me</button></Link>
+     <Link to ="/roads"><button className="btn btn-lg btn-secondary btn-block" type="submit" style={{marginTop: "10px",backgroundColor:"#17a2b8"}}>All Roads</button></Link> 
       <button className="btn btn-lg btn-primary btn-block" type="submit">Help</button>
       </div>
       </div>
